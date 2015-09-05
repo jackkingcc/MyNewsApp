@@ -1,6 +1,5 @@
 package com.example.gary.mynewsapp;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,13 +15,13 @@ public class WelcomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         mImageView=(ImageView)findViewById(R.id.welcome);
 
-        animation = new AlphaAnimation(1,1.0f);
-        animation.setDuration(3 * 1000);
+        animation = new AlphaAnimation(0f,1f);
+        animation.setDuration(5 * 1000);
         animation.setFillAfter(true);
         mImageView.startAnimation(animation);
 
@@ -46,7 +45,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 // TODO Auto-generated method stub
 //                Intent intent = new Intent(WellcomActivity.this,ContentActivity.class);
 //                startActivity(intent);
-                finish();
+                //finish();
             }
         });
     }
